@@ -1,33 +1,24 @@
-# model-shortcut
+# my-claude
 
-`/m` is a keyboard shortcut for `/model` followed by `/effort`. It runs those two commands for you and keeps no state of its own, so the status line, `/model` and `/effort` all behave as if you had typed them.
-
-```
-/m 23                  /model sonnet, /effort high
-/m op xh               /model opus, /effort xhigh
-/m 1 1                 /model haiku, /effort low
-/m op 3                /model opus, /effort high
-/m sonnet-4-5 2        /model claude-sonnet-4-5, /effort medium
-/m claude-opus-4-6 3   /model claude-opus-4-6, /effort high
-/m reset               /model default, /effort auto
-/m                     show the current model
-```
-
-Models are numbered 1-3 (haiku, sonnet, opus). Efforts are numbered 1-5 (low, medium, high, xhigh, max). Names work in full or as any prefix that matches only one name. Digits and names can be mixed in any order.
-
-A bare model name is passed to `/model` as the alias (`sonnet`, `opus`, `haiku`), which Claude Code resolves to the latest version of that tier. To use an older version, give a full id (`claude-sonnet-4-5`) or a tier with a version (`sonnet-4-5`, `opus4.6`), which expands to the full id. Like `/model`, `/m` saves the model as your default for new sessions.
-
-## Install
+Custom Claude Code features, installed one at a time. Each folder under `plugins/` is its own plugin, so you add only what you want.
 
 ```
-/plugin install model-shortcut --marketplace brendanwilliam/model-shortcut
+/plugin marketplace add brendanwilliam/my-claude
 ```
 
-Answer `y` to add the marketplace, then choose a scope. Needs Claude Code 2.1.275 or later.
+| Plugin | What it does | Install |
+| --- | --- | --- |
+| [model-shortcut](plugins/model-shortcut) | `/m 23` sets the model and effort in one command | `/plugin install model-shortcut@my-claude` |
+| [statusline](plugins/statusline) | `/statusline` turns on a multi-line status line with context, usage and cost | `/plugin install statusline@my-claude` |
 
-## Develop
+Needs Claude Code 2.1.275 or later.
 
-```
-claude plugin validate .
-claude plugin test .
-```
+## Adding a plugin
+
+1. Create `plugins/<name>/` with `.claude-plugin/plugin.json` and its hooks.
+2. Add an entry to `.claude-plugin/marketplace.json` with `"source": "./plugins/<name>"`.
+3. Check it: `claude plugin validate . --strict` from the root, then `claude plugin validate` and `claude plugin test` in the plugin folder.
+
+## License
+
+MIT

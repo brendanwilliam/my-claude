@@ -1,6 +1,17 @@
 {
-  "name": "model-shortcut",
-  "description": "One-command model and effort switching for Claude Code: /m 23 is sonnet high",
+  "name": "my-claude",
+  "description": "Custom Claude Code features, installed a la carte",
   "owner": { "name": "brendanwilliam" },
-  "plugins": [{ "name": "model-shortcut", "source": "./" }]
+  "plugins": [
+    {
+      "name": "model-shortcut",
+      "description": "/m sets the model and effort in one command: /m 23 is sonnet high",
+      "source": "./plugins/model-shortcut"
+    },
+    {
+      "name": "statusline",
+      "description": "Multi-line status line: model, effort, context, usage limits and cost. /statusline turns it on",
+      "source": "./plugins/statusline"
+    }
+  ]
 }
