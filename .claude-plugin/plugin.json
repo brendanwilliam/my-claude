@@ -1,0 +1,8 @@
+{
+  "name": "model-shortcut",
+  "version": "0.1.0",
+  "description": "/m sets the model and effort for requests: /m 23 is sonnet high",
+  "author": { "name": "brendanwilliam", "url": "https://github.com/brendanwilliam" },
+  "repository": "https://github.com/brendanwilliam/model-shortcut",
+  "license": "MIT"
+}

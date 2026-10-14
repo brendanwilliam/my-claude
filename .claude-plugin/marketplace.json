@@ -1,0 +1,6 @@
+{
+  "name": "model-shortcut",
+  "description": "One-command model and effort switching for Claude Code: /m 23 is sonnet high",
+  "owner": { "name": "brendanwilliam" },
+  "plugins": [{ "name": "model-shortcut", "source": "./" }]
+}
