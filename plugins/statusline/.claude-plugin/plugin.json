@@ -1,0 +1,8 @@
+{
+  "name": "statusline",
+  "version": "0.1.0",
+  "description": "/statusline turns on a multi-line status line: model, effort, context, usage limits and cost",
+  "author": { "name": "brendanwilliam", "url": "https://github.com/brendanwilliam" },
+  "repository": "https://github.com/brendanwilliam/my-claude/tree/main/plugins/statusline",
+  "license": "MIT"
+}
